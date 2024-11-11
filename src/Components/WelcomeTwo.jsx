@@ -267,7 +267,7 @@ export default function WelcomeTwo({
             </div>
           </div>
         )}
-        {resetLogin && (
+        {resetLogin && login && reset && (
           <div>
             <div className="relative">
               <p className="text-[#1e1b39] text-xs font-semibold mb-2">Email</p>
