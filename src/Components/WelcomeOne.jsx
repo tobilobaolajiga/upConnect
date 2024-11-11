@@ -1,15 +1,22 @@
-export default function WelcomeOne({ auto, setAuto, showAuto, pass, login }) {
+export default function WelcomeOne({
+  auto,
+  setAuto,
+  showAuto,
+  pass,
+  login,
+  otpPage,
+}) {
   return (
     <div>
       <div className="bg-gradient-to-br from-[#f58220] to-white flex flex-col items-center justify-center h-screen rounded-lg m-2 gap-8">
         <img src="group.svg" alt="" className="w-[350px] my-4" />
         <div className="flex flex-col justify-center items-center">
-          {!auto && (
+          {!auto && !otpPage && (
             <p className="font-epilogue font-bold text-[#303030] text-[20px]">
               Control your Business!
             </p>
           )}
-          {auto && !pass && (
+          {(auto || otpPage) && !pass && (
             <p className="font-epilogue font-bold text-[#303030] text-[20px]">
               In need of insights?
             </p>
@@ -24,14 +31,14 @@ export default function WelcomeOne({ auto, setAuto, showAuto, pass, login }) {
               Data-driven Decision-making
             </p>
           )}
-          {!auto && (
+          {!auto && !otpPage && (
             <p className="text-center w-7/12 font-inter text-[12px] text-[#1c1c1c] my-2">
               Unified Payment Connect Monitoring System is a comprehensive
               platform for monitoring and managing transaction activities for
               various institutions.
             </p>
           )}
-          {auto && !pass && (
+          {(auto || otpPage) && !pass && (
             <p className="text-center w-7/12 font-inter text-[12px] text-[#1c1c1c] my-2">
               Unified Payment Connect Monitoring System helps in extracting
               meaningful insights from large volumes of data collected from

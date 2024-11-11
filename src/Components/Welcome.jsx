@@ -14,6 +14,9 @@ export default function Welcome() {
   const [widthFour, setwidthFour] = useState('');
 
   const [count, setCount] = useState(1);
+  const [login, setLogin] = useState(false);
+  const [reset, setReset] = useState(false);
+  const [resetLogin, setResetLogin] = useState(false);
 
   const showAuto = () => {
     setAuto(true);
@@ -22,6 +25,7 @@ export default function Welcome() {
     setWidthOne(40);
     setwidthTwo(70);
     setCount(2);
+    setLogin(false);
   };
 
   const [pass, setPass] = useState(false);
@@ -34,7 +38,10 @@ export default function Welcome() {
     setCount(3);
   };
 
-  const [login, setLogin] = useState(false);
+  const showReset = () => {
+    setReset(true);
+  };
+
   const showLogin = () => {
     setLogin(true);
     setColorThree('#01a926');
@@ -42,6 +49,8 @@ export default function Welcome() {
     setwidthThree(40);
     setwidthFour(70);
     setCount(4);
+    setResetLogin(true);
+    console.log(reset);
   };
 
   const [userLogin, setUserLogin] = useState(false);
@@ -63,6 +72,7 @@ export default function Welcome() {
     setStepWidth(40);
     setStepTwoWidth(70);
   };
+
   return (
     <div className="grid grid-cols-2 ">
       <WelcomeOne
@@ -71,6 +81,7 @@ export default function Welcome() {
         showAuto={showAuto}
         pass={pass}
         login={login}
+        otpPage={otpPage}
       />
       <WelcomeTwo
         auto={auto}
@@ -98,6 +109,9 @@ export default function Welcome() {
         showUserLogin={showUserLogin}
         otpPage={otpPage}
         showOtpPage={showOtpPage}
+        reset={reset}
+        showReset={showReset}
+        resetLogin={resetLogin}
       />
     </div>
   );
