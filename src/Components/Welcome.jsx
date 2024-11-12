@@ -12,12 +12,15 @@ export default function Welcome() {
   const [widthTwo, setwidthTwo] = useState('');
   const [widthThree, setwidthThree] = useState('');
   const [widthFour, setwidthFour] = useState('');
-
+  const [first, setFirst] = useState('');
   const [count, setCount] = useState(1);
   const [login, setLogin] = useState(false);
   const [reset, setReset] = useState(false);
   const [resetLogin, setResetLogin] = useState(false);
 
+  const showFirst = () => {
+    setFirst(true);
+  };
   const showAuto = () => {
     setAuto(true);
     setColorOne('#01a926');
@@ -50,10 +53,11 @@ export default function Welcome() {
     setwidthFour(70);
     setCount(4);
     setResetLogin(true);
-    console.log(reset);
+    setFirstLogin(true);
   };
 
   const [userLogin, setUserLogin] = useState(false);
+  const [firstLogin, setFirstLogin] = useState(false);
   const [loginCount, setLoginCount] = useState(1);
   const [stepOne, setStepOne] = useState('#f58220');
   const [stepTwo, setStepTwo] = useState();
@@ -113,6 +117,9 @@ export default function Welcome() {
         reset={reset}
         showReset={showReset}
         resetLogin={resetLogin}
+        first={first}
+        showFirst={showFirst}
+        firstLogin={firstLogin}
       />
     </div>
   );
