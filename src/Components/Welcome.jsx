@@ -71,6 +71,7 @@ export default function Welcome() {
     setStepTwo('#f58220');
     setStepWidth(40);
     setStepTwoWidth(70);
+    setLoginCount(2);
   };
 
   return (
